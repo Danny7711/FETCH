@@ -22,15 +22,33 @@
 
 //  .catch(error => console.error('Ошибка:', error)); // Обрабатываем ошибку
 
- const data = { username: 'john_doe', salary: '400000', age:'31' };
+//  const data = { username: 'john_doe', salary: '400000', age:'31' };
 
-fetch('https://dummy.restapiexample.com/api/v1/create', {
- method: 'POST', // Указываем метод
+// fetch('https://dummy.restapiexample.com/api/v1/create', {
+//  method: 'POST', // Указываем метод
+//  headers: {
+//    'Content-Type': 'application/json' // Указываем тип данных
+//  },
+//  body: JSON.stringify(data) // Преобразуем объект в JSON-строку
+// })
+//  .then(response => response.json())
+//  .then(data => console.log('Успех:', data))
+//  .catch(error => console.error('Ошибка:', error));
+
+// fetch('https://dummy.restapiexample.com/api/v1/delete/2', {
+//    method: 'DELETE'
+//  })
+//    .then(() => console.log('Пользователь удален'))
+//    .catch(error => console.error('Ошибка:', error));
+const updatedData = { name: 'John Doe', age: 31 };
+
+fetch('https://api.example.com/users/1', {
+ method: 'PUT',
  headers: {
-   'Content-Type': 'application/json' // Указываем тип данных
+   'Content-Type': 'application/json'
  },
- body: JSON.stringify(data) // Преобразуем объект в JSON-строку
+ body: JSON.stringify(updatedData)
 })
  .then(response => response.json())
- .then(data => console.log('Успех:', data))
+ .then(data => console.log('Обновлено:', data))
  .catch(error => console.error('Ошибка:', error));
